@@ -254,7 +254,7 @@ for epoch in range(EPOCH):
                 "| total_loss: %.4f" % total_loss.cpu().data.numpy(),
             )
 
-# 训练结束后绘制损失曲线
+# Plot the loss.
 plt.figure(figsize=(12, 6))
 plt.plot(train_losses, label='Total Loss', color='blue', linewidth=2)
 plt.plot(abundance_losses, label='Abundance Loss', color='red', linestyle='--', linewidth=2)
@@ -305,3 +305,4 @@ print("RMSE_b", RMSE_b)
 print(b_result)
 b_predict = b_predict.cpu().detach().numpy()
 sio.savemat('b_result_1.mat', {'b_result': b_predict})
+

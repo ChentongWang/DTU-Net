@@ -726,12 +726,9 @@ class multiStageUnmixing(nn.Module):
         'dilateformer_tiny',
         pretrained=False,
         num_classes=4,
-        # drop=args.drop,
-        # drop_path=args.drop_path,
-        drop_block=None,
+        drop_block=None
         )
-
-        # decoder2
+        
         self.avgpool = nn.AdaptiveAvgPool1d(1)
 
         # decoder2
@@ -761,20 +758,17 @@ class multiStageUnmixing(nn.Module):
         cls_emb = cls_emb.view(1, 4, -1)
         abu_est = self.upscale(cls_emb).view(1, 4, 100, 100)
         spectral_feature = self.spectral(x)
-
-        """Spatial-Spectral feature fusion"""
         spectral_spatial_feature = torch.cat((abu_est, spectral_feature), 1)
         spectral_spatial_feature2 = self.conv(spectral_spatial_feature)
         feature_attetion_weight = self.spectral_attention(spectral_spatial_feature2)
         spectral_attetion_feature = torch.mul((spectral_spatial_feature2 * feature_attetion_weight), 1)
         attetion_feature = spectral_attetion_feature + spectral_spatial_feature
         layer1out = self.layer4(attetion_feature)
-
+        # gamma = 0.8, gamma is the temperature-like scalar
         en_result1 = self.encodelayer(0.8 * layer1out)
         de_result1 = self.decoderlayer4(en_result1)
         de_result2 = torch.multiply(de_result1, de_result1)
         de_result3 = torch.cat((x, de_result1, de_result2), 1)
-
         middle = self.decoder2(de_result3)               
         middle1 = middle.view(1, 164, 100, 100)          
         middle2 = middle1.flatten(2).transpose(1, 2)     
@@ -910,3 +904,4 @@ print("RMSE_b", RMSE_b)
 print(b_result)
 b_predict = b_predict.cpu().detach().numpy()
 sio.savemat('DTU_PPNMM30dB75pure_results.mat', {'M0': decoder_para, 'A0': en_abundance, 'b0': b_predict})
+

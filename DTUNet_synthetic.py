@@ -41,7 +41,7 @@ endmember_number, pixel_number = abundance_GT.shape
 
 # Hyperparameters
 col, C, gamma = 100, 108, 0.8
-batch_size = 100*100
+batch_size = 1
 EPOCH = 600
 alpha = 0.1
 drop_out = 0.
@@ -911,3 +911,4 @@ b_predict = b_predict.cpu().detach().numpy()
 
 # save the results
 sio.savemat('DTU_PPNMM30dB75pure_results.mat', {'M0': decoder_para, 'A0': en_abundance, 'b0': b_predict})
+

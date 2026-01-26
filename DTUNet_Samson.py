@@ -1,17 +1,10 @@
 import torch
 import torch.nn as nn
 import numpy as np
-from torch.nn.modules import dropout
 import scipy.io as sio
-from torch.nn.modules.activation import LeakyReLU
-import torchvision
-import argparse
 import random
 import matplotlib.pyplot as plt
-import matplotlib as mpl
-import torch.nn.functional as F
 import torchvision.transforms as transforms
-from typing import Optional
 import torch.utils.checkpoint as checkpoint
 import os
 import time
@@ -21,12 +14,6 @@ from timm.models.registry import register_model
 
 from functools import partial
 from timm.models.vision_transformer import _cfg
-
-import cv2 # Make sure you have opencv-python installed: pip install opencv-python
-from pytorch_grad_cam import GradCAM
-from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
-from pytorch_grad_cam.utils.image import show_cam_on_image
-import traceback
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
@@ -921,3 +908,4 @@ b_predict = b_predict.cpu().detach().numpy()
 
 '''save the results'''
 sio.savemat('DTU_Samson_results.mat', {'M0': decoder_para, 'A0': en_abundance, 'b0': b_predict})
+

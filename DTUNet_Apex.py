@@ -46,7 +46,7 @@ batch_size = 1
 EPOCH = 600
 alpha = 30
 beta = 0.03
-drop_out = 0.5
+drop_out = 0.4
 learning_rate = 0.0016
 
 original_HSI = torch.reshape(original_HSI, (band_Number, col, col))
@@ -910,3 +910,4 @@ b_predict = b_predict.cpu().detach().numpy()
 
 '''save the results'''
 sio.savemat('DEQ_Apex_results.mat', {'M0': decoder_para, 'A0': en_abundance})
+

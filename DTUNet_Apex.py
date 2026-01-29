@@ -634,8 +634,7 @@ class multiStageUnmixing(nn.Module):
                 out_channels=band_Number,
                 kernel_size=(1, 1),
                 bias=False,
-            ),
-            nn.ReLU()
+            )
         )
 
         """Spectral Branch"""
@@ -910,4 +909,5 @@ b_predict = b_predict.cpu().detach().numpy()
 
 '''save the results'''
 sio.savemat('DEQ_Apex_results.mat', {'M0': decoder_para, 'A0': en_abundance})
+
 

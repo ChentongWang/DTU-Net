@@ -24,7 +24,7 @@ We warm-heartedly welcome and appreciate citations if this work helps your resea
   year={2026},<br>
   volume={64},<br>
   pages={1-17},<br>
-  doi={10.1109/TGRS.2026.3658361}}<br>
+  doi={10.1109/TGRS.2026.3658361}}
 </pre>
 
 </details>

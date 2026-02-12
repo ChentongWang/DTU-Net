@@ -15,22 +15,17 @@ We warm-heartedly welcome and appreciate citations if this work helps your resea
 <details>
   
 <summary>Click to expand BibTeX</summary>
-  
-@ARTICLE{11367059,
 
-  author={Wang, Chentong and Gao, Jincheng and Zhu, Fei and Halimi, Abderrahim and Richard, Cédric},
-  
-  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  
-  title={DTU-Net: A Multi-Scale Dilated Transformer Network for Nonlinear Hyperspectral Unmixing}, 
-  
-  year={2026},
-  
-  volume={64},
-  
-  pages={1-17},
-  
-  doi={10.1109/TGRS.2026.3658361}}
+<pre>
+@ARTICLE{11367059,<br>
+  author={Wang, Chentong and Gao, Jincheng and Zhu, Fei and Halimi, Abderrahim and Richard, Cédric},<br>
+  journal={IEEE Transactions on Geoscience and Remote Sensing},<br> 
+  title={DTU-Net: A Multi-Scale Dilated Transformer Network for Nonlinear Hyperspectral Unmixing},<br> 
+  year={2026},<br>
+  volume={64},<br>
+  pages={1-17},<br>
+  doi={10.1109/TGRS.2026.3658361}}<br>
+</pre>
 
 </details>
 

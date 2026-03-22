@@ -1,6 +1,7 @@
 # DTU-Net
 ## Background
 The repository contains the PyTorch implementations for the paper "DTU-Net: A Multi-Scale Dilated Transformer Network for Nonlinear Hyperspectral Unmixing".
+The versions of torch is 1.11.0.
 
 DTU-Net: A Multi-Scale Dilated Transformer Network for Nonlinear Hyperspectral Unmixing,
 C. Wang, J. Gao, F. Zhu, A. Halimi, and C. Richard,

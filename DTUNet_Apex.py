@@ -908,6 +908,6 @@ b_predict = torch.flatten(b_result, 1)
 b_predict = b_predict.cpu().detach().numpy()
 
 '''save the results'''
-sio.savemat('DEQ_Apex_results.mat', {'M0': decoder_para, 'A0': en_abundance})
+sio.savemat('DTU_Apex_results.mat', {'M0': decoder_para, 'A0': en_abundance})
 
 
